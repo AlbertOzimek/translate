@@ -1,5 +1,11 @@
 # Translate
 
+
+## build and deploy
+ng build --prod --base-href https://albertozimek.github.io/translate/
+ngh
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
 ## Development server

@@ -5,6 +5,9 @@
 ng build --prod --base-href https://albertozimek.github.io/translate/
 ngh
 
+## deployed on firebase:
+https://translate-33648.firebaseapp.com/
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 

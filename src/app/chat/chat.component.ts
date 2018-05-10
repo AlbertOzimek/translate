@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import * as firebase from 'firebase/app';
+import {Observable} from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-chat',
@@ -12,16 +12,12 @@ import * as firebase from 'firebase/app';
 export class ChatComponent {
 
   user: Observable<firebase.User>;
-  items: FirebaseListObservable<any>;
+  items: AngularFireList<any>;
   name: any;
   msgVal = '';
 
   constructor(public afAuth: AngularFireAuth, db: AngularFireDatabase) {
-    this.items = db.list('/messages', {
-      query: {
-        limitToLast: 5
-      }
-    });
+    this.items = db.list('/messages');
 
     this.user = afAuth.authState;
 
